@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --background-color: #f8f9fa;
+      --text-color: #2c3e50;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, var(--background-color), #ffffff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h2 {
+      color: var(--text-color);
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.4;
+      opacity: 0;
+      animation: slideUp 0.8s ease forwards;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      display: inline-block;
+      opacity: 0;
+      animation: scaleIn 0.6s ease forwards 0.3s;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      background: linear-gradient(45deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0));
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">✓</div>
+    <h2 id="thankYouMessage">Thanks for trying this Project! You can verify the data in DynamoDB Table.</h2>
+  </div>
+
+  <script>
+    // No need for additional JavaScript as we're using CSS animations
+  </script>
+</body>
+</html>
